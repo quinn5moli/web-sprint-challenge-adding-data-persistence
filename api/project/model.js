@@ -24,7 +24,7 @@ const create = async (newProj) => {
         newProj.project_completed = 0
     }
 
-    const [project_id] = a('projects').insert(newProj)
+    const [project_id] = await db('projects').insert(newProj)
 
     return findById(project_id)
 }

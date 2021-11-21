@@ -25,7 +25,7 @@ const create = async (newTask) => {
         newTask.task_completed = 0
     }
 
-    const [task_id] = await db('tasks').inser(newTask)
+    const [task_id] = await db('tasks').insert(newTask)
 
     return findById(task_id)
 }
